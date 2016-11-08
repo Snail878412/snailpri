@@ -1,0 +1,17 @@
+#footer {
+    background: none repeat scroll 0 0 ;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    text-align: center;
+    width: '100%';
+	color: #666;
+    font: 12px/20px tahoma,arial,ËÎÌו,sans-serif;
+}
+.pr {
+    position: relative;
+}
+#footer .footinfo {
+    border-top: 1px solid #ebebeb;
+    margin-top: 5px;
+    padding-left: 255px;
+}

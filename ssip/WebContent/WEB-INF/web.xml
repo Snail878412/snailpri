@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns="http://java.sun.com/xml/ns/javaee" 
+		xmlns:web="http://java.sun.com/xml/ns/javaee" 
+		xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" 
+		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+			http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+		version="2.5">
+		
+  <display-name>蜗牛集成系统平台</display-name>
+  <description>将所有的系统都集成到此平台中,可以方便的添加和卸载子系统</description>
+  <icon>
+  	<web:large-icon></web:large-icon>
+  	<web:small-icon></web:small-icon>
+  </icon>
+  
+  
+  <!-- 全局参数 -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/config/springConfig*.xml</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>/config/log4j.properties</param-value>
+  </context-param>
+  <context-param>
+    <param-name>log4jRefreshInterval</param-name>
+    <param-value>6000</param-value>
+  </context-param>
+  
+  <!-- 监听器 -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
+  
+  <!-- servlet -->
+  <servlet>
+    <servlet-name>springMVCDispatcherServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/config/springmvcConfig.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>springMVCDispatcherServlet</servlet-name>
+    <url-pattern>*.ssip</url-pattern>
+  </servlet-mapping>
+  
+  
+  <welcome-file-list>
+    <welcome-file>test.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

@@ -1,0 +1,22 @@
+[{
+	menuId:'11',
+	menuName:'测试系统111',
+	menuDesc:'这是第一个测试系统',
+			icon:'',
+			childrens:[],
+			menuIndex:1
+		},{
+			menuId:'12',
+			menuName:'测试系统112',
+			menuDesc:'这是第一个测试系统',
+			icon:'',
+			childrens:[],
+			menuIndex:2
+		},{
+			menuId:'13',
+			menuName:'测试系统113',
+			menuDesc:'这是第一个测试系统',
+			icon:'',
+			childrens:[],
+			menuIndex:3
+		}]
